@@ -1,0 +1,99 @@
+name: Build
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+  workflow_call:
+    secrets:
+      github-token:
+        description: |
+          The token to use to make authenticated GitHub API calls.
+        required: false
+jobs:
+  build:
+    name: Build
+    runs-on: ${{matrix.os}}
+    permissions:
+      contents: read
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
+    steps:
+      - id: checkout-git-repository
+        name: Checkout Git repository
+        uses: actions/checkout@v5
+        with:
+          lfs: true
+          submodules: recursive
+      - id: install-nodejs
+        name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - id: install-dependencies
+        name: Install dependencies
+        run: npm install
+      - id: lint
+        name: Lint
+        run: |
+          npm run lint
+      - id: test
+        name: Test
+        run: |
+          npm run test
+      - id: build-electron-app
+        name: Build Electron app
+        uses: sudovijay/action-electron-builder@v1.7.4
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+      - id: upload-unpacked-distributable
+        name: Upload unpacked distributable
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{matrix.os}}-unpacked
+          path: ./dist/*-unpacked/
+          if-no-files-found: error
+          compression-level: 0
+          include-hidden-files: true
+      - id: upload-installer
+        name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{matrix.os}}-installer
+          path: |
+            ./dist/*.deb
+            ./dist/*.dmg
+            ./dist/*Setup*.exe
+          if-no-files-found: error
+          compression-level: 0
+          include-hidden-files: true
+      - id: upload-portable-app
+        name: Upload portable app
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{matrix.os}}-installer
+          path: |
+            ./dist/*.AppImage
+            ./dist/*.exe
+            !./dist/*Setup*.exe
+          if-no-files-found: error
+          compression-level: 0
+          include-hidden-files: true
+      - id: upload-portable-archive
+        name: Upload portable archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{matrix.os}}-installer
+          path: |
+            ./dist/*.zip
+            ./dist/*.tar*
+          if-no-files-found: error
+          compression-level: 0
+          include-hidden-files: true

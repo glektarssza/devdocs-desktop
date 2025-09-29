@@ -1,0 +1,23 @@
+name: Build and Release
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - v**
+jobs:
+  build:
+    name: Build
+    permissions:
+      contents: read
+    uses: ./.github/workflows/build.yaml
+    secrets:
+      github-token: ${{secrets.GITHUB_TOKEN}}
+  release:
+    name: Release
+    permissions:
+      contents: read
+    needs:
+      - build
+    uses: ./.github/workflows/release.yaml
+    secrets:
+      github-token: ${{secrets.GITHUB_TOKEN}}
