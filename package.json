@@ -1,8 +1,7 @@
 {
-    "private": true,
     "name": "devdocs-desktop",
     "version": "0.7.2",
-    "description": "A desktop client for devdocs.io.",
+    "description": "A desktop client for DevDocs.io.",
     "author": {
         "name": "G'lek Tarssza",
         "email": "glek@glektarssza.com",
@@ -16,6 +15,21 @@
         }
     ],
     "license": "MIT",
+    "keywords": [
+        "devdocs",
+        "app",
+        "electron"
+    ],
+    "private": true,
+    "homepage": "https://github.com/glektarssza/devdocs-desktop",
+    "bugs": {
+        "url": "https://github.com/glektarssza/devdocs-desktop/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/egoist/devdocs-desktop.git"
+    },
+    "type": "commonjs",
     "main": "app/index.js",
     "scripts": {
         "postinstall": "electron-builder install-app-deps",
@@ -28,26 +42,11 @@
         "dist": "electron-builder",
         "release": "electron-builder"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/egoist/devdocs-desktop.git"
-    },
-    "keywords": [
-        "devdocs",
-        "app",
-        "electron"
-    ],
-    "bugs": {
-        "url": "https://github.com/egoist/devdocs-desktop/issues"
-    },
-    "homepage": "https://github.com/egoist/devdocs-desktop#readme",
-    "type": "commonjs",
     "devDependencies": {
         "@eslint/js": "^9.36.0",
         "base64-js": "^1.5.1",
         "dotenv": "^17.2.2",
         "electron-builder": "^26.0.12",
-        "electron-devtools-installer": "^4.0.0",
         "electron-notarize": "^1.2.2",
         "electron": "^38.2.0",
         "eslint-config-prettier": "^10.1.8",
@@ -56,8 +55,8 @@
         "prettier": "^3.6.2"
     },
     "build": {
-        "appId": "sh.egoist.devdocs",
-        "productName": "DevDocs",
+        "appId": "com.glektarssza.devdocs",
+        "productName": "DevDocs.io",
         "compression": "maximum",
         "asar": true,
         "dmg": {

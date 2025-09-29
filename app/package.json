@@ -2,32 +2,39 @@
     "name": "devdocs",
     "productName": "DevDocs",
     "version": "0.7.2",
-    "description": "Desktop client for devdocs.io",
+    "description": "A desktop client for DevDocs.io.",
     "author": {
-        "name": "EGOIST",
-        "email": "0x142857@gmail.com",
-        "url": "https://github.com/egoist"
+        "name": "G'lek Tarssza",
+        "email": "glek@glektarssza.com",
+        "url": "https://glektarssza.com"
     },
+    "contributors": [
+        {
+            "name": "EGOIST",
+            "email": "0x142857@gmail.com",
+            "url": "https://github.com/egoist"
+        }
+    ],
+    "private": true,
     "license": "MIT",
     "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/egoist/devdocs-desktop.git"
-    },
     "keywords": [
         "devdocs",
+        "devdocs.io",
         "app",
         "electron",
         "desktop"
     ],
+    "homepage": "https://github.com/glektarssza/devdocs-desktop",
     "bugs": {
-        "url": "https://github.com/egoist/devdocs-desktop/issues"
+        "url": "https://github.com/glektarssza/devdocs-desktop/issues"
     },
-    "homepage": "https://github.com/egoist/devdocs-desktop#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/glektarssza/devdocs-desktop.git"
+    },
     "type": "commonjs",
+    "scripts": {},
     "dependencies": {
         "axios": "^1.12.2",
         "debug": "^4.4.3",
