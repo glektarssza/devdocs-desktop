@@ -28,6 +28,10 @@ jobs:
       - id: install-dependencies
         name: Install dependencies
         run: npm install
+      - id: lint
+        name: Lint
+        run: |
+          npm lint
       - id: test
         name: Test
         run: |
