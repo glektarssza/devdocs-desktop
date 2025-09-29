@@ -1,4 +1,4 @@
-name: Build/release
+name: Build/Release
 
 on:
   push:
@@ -10,11 +10,12 @@ on:
 jobs:
   release:
     runs-on: ${{ matrix.os }}
-
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
-
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
     steps:
       - id: checkout-git-repository
         name: Checkout Git repository
