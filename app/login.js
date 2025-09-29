@@ -15,7 +15,6 @@ module.exports = (cb) => {
     );
 
     ipcMain.once('login-message', (event, usernameAndPassword) => {
-        debug('Login message recieved', usernameAndPassword[0]);
         cb(usernameAndPassword[0], usernameAndPassword[1]);
         loginWindow.close();
     });
