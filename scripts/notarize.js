@@ -1,18 +1,18 @@
-require('dotenv').config()
-const { notarize } = require('electron-notarize')
+require('dotenv').config();
+const {notarize} = require('electron-notarize');
 
-module.exports = context => {
-  const { electronPlatformName, appOutDir } = context
-  if (electronPlatformName !== 'darwin') {
-    return
-  }
+module.exports = (context) => {
+    const {electronPlatformName, appOutDir} = context;
+    if (electronPlatformName !== 'darwin') {
+        return;
+    }
 
-  const appName = context.packager.appInfo.productFilename
+    const appName = context.packager.appInfo.productFilename;
 
-  return notarize({
-    appBundleId: 'sh.egoist.devdocs',
-    appPath: `${appOutDir}/${appName}.app`,
-    appleId: process.env.APPLEID,
-    appleIdPassword: process.env.APPLEIDPASS
-  })
-}
+    return notarize({
+        appBundleId: 'com.glektarssza.devdocs',
+        appPath: `${appOutDir}/${appName}.app`,
+        appleId: process.env.APPLEID,
+        appleIdPassword: process.env.APPLEIDPASS
+    });
+};

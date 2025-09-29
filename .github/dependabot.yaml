@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://json.schemastore.org/dependabot-2.0.json
+version: 2
+updates:
+  - directory: /
+    package-ecosystem: npm
+    labels:
+      - Dependency
+    assignees:
+      - glektarssza
+    schedule:
+      interval: weekly
+      day: wednesday
+      time: '12:00'
+      timezone: Canada/Mountain
+  - directory: /app/
+    package-ecosystem: npm
+    labels:
+      - Dependency
+    assignees:
+      - glektarssza
+    schedule:
+      interval: weekly
+      day: wednesday
+      time: '12:00'
+      timezone: Canada/Mountain
+  - directory: /
+    package-ecosystem: github-actions
+    labels:
+      - Dependency
+    assignees:
+      - glektarssza
+    schedule:
+      interval: weekly
+      day: wednesday
+      time: '12:00'
+      timezone: Canada/Mountain
