@@ -2,4 +2,5 @@ devdocs
 g'lek
 glek
 glektarssza
+sudovijay
 tarssza
