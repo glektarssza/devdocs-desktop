@@ -14,7 +14,7 @@ module.exports = (cb) => {
         `file://${path.join(__dirname, '/renderer/login.html')}`
     );
 
-    ipcMain.once('login-message', (event, usernameAndPassword) => {
+    ipcMain.once('login-message', (_, usernameAndPassword) => {
         cb(usernameAndPassword[0], usernameAndPassword[1]);
         loginWindow.close();
     });
