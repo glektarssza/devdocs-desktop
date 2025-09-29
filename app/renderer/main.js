@@ -15,11 +15,27 @@ function ensureCustomFiles() {
     const css = configDir('custom.css');
     const js = configDir('custom.js');
     if (!fs.existsSync(css)) {
-        fs.writeFileSync(css, '', 'utf8');
+        const cssHandle = fs.openSync(
+            css,
+            fs.constants.O_CREAT |
+                fs.constants.O_EXCL |
+                fs.constants.O_TRUNC |
+                fs.constants.O_WRONLY
+        );
+        fs.writeFileSync(cssHandle, '\n', 'utf8');
+        fs.closeSync(cssHandle);
     }
 
     if (!fs.existsSync(js)) {
-        fs.writeFileSync(js, '', 'utf8');
+        const jsHandle = fs.openSync(
+            js,
+            fs.constants.O_CREAT |
+                fs.constants.O_EXCL |
+                fs.constants.O_TRUNC |
+                fs.constants.O_WRONLY
+        );
+        fs.writeFileSync(jsHandle, '\n', 'utf8');
+        fs.closeSync(jsHandle);
     }
 }
 
