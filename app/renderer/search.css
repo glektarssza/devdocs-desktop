@@ -1,85 +1,85 @@
 .searcher {
-  position: fixed;
-  top: var(--webHeaderHeight);
-  right: 0;
-  padding: 10px;
-  background: var(--headerBackground);
-  border: 1px solid var(--searchBorder);
-  border-top: none;
-  border-right: none;
-  display: flex;
-  border-radius: 0 0 0 3px;
-  z-index: 9999;
+    position: fixed;
+    top: var(--webHeaderHeight);
+    right: 0;
+    padding: 10px;
+    background: var(--headerBackground);
+    border: 1px solid var(--searchBorder);
+    border-top: none;
+    border-right: none;
+    display: flex;
+    border-radius: 0 0 0 3px;
+    z-index: 9999;
 }
 
 .is-darwin .searcher {
-  top: calc(24px + var(--webHeaderHeight));
+    top: calc(24px + var(--webHeaderHeight));
 }
 
 .searcher-progress {
-  height: 30px;
-  display: inline-flex;
-  align-items: center;
-  margin-right: 5px;
-  justify-content: center;
-  min-width: 34px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 5px;
+    justify-content: center;
+    min-width: 34px;
 }
 
 .searcher-action {
-  border: 1px solid var(--searchActionBorder);
-  background: var(--contentBackgorund);
-  outline: none;
-  padding: 0 8px;
-  cursor: pointer;
-  font-size: .875rem;
-  height: 30px;
-  overflow: hidden;
-  color: var(--textColor);
+    border: 1px solid var(--searchActionBorder);
+    background: var(--contentBackgorund);
+    outline: none;
+    padding: 0 8px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    height: 30px;
+    overflow: hidden;
+    color: var(--textColor);
 }
 
 .searcher-prev {
-  border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
 }
 
 .searcher-close {
-  border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
 }
 
 .searcher-action:not(:last-child) {
-  border-right: none;
+    border-right: none;
 }
 
-.searcher-action  svg {
-  width: 14px;
-  height: 14px;
+.searcher-action svg {
+    width: 14px;
+    height: 14px;
 }
 
 .searcher-action:hover {
-  background: var(--searchActionHoverBackground);
+    background: var(--searchActionHoverBackground);
 }
 
 .searcher-input {
-  border: 1px solid var(--searchInputBorder);
-  border-radius: 3px;
-  padding: 0 5px;
-  outline: none;
-  font-size: .875rem;
-  height: 30px;
-  margin-right: 5px;
-  width: 200px;
-  background-color: var(--contentBackground);
-  color: var(--searchInputColor);
+    border: 1px solid var(--searchInputBorder);
+    border-radius: 3px;
+    padding: 0 5px;
+    outline: none;
+    font-size: 0.875rem;
+    height: 30px;
+    margin-right: 5px;
+    width: 200px;
+    background-color: var(--contentBackground);
+    color: var(--searchInputColor);
 }
 
 .searcher-input:focus {
-  border-color: var(--inputFocusBorder);
-  box-shadow: 0 0 1px var(--inputFocusBorder);
+    border-color: var(--inputFocusBorder);
+    box-shadow: 0 0 1px var(--inputFocusBorder);
 }
 
 .searcher__hidden {
-  display: none;
+    display: none;
 }
 
 .searcher-progress__disabled {
-  display: none;
+    display: none;
 }
