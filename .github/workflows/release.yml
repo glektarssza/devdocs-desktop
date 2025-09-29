@@ -31,11 +31,11 @@ jobs:
       - id: lint
         name: Lint
         run: |
-          npm lint
+          npm run lint
       - id: test
         name: Test
         run: |
-          npm test
+          npm run test
       - id: build-electron-app
         name: Build Electron app
         uses: sudovijay/action-electron-builder@v1.7.4
