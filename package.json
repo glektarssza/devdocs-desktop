@@ -20,7 +20,7 @@
     "scripts": {
         "postinstall": "electron-builder install-app-deps",
         "test": "echo 'No tests defined!' && exit 0",
-        "lint": "npm run lint:eslint && npm lint:prettier",
+        "lint": "npm run lint:eslint && npm run lint:prettier",
         "lint:prettier": "prettier --config-path .prettierrc.cjs --ignore-path .prettierignore --ignore-path .gitignore --check ./app/",
         "lint:eslint": "eslint ./app/",
         "app": "DEBUG=devdocs-desktop:* electron app/index.js",
