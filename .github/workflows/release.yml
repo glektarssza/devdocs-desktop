@@ -16,27 +16,25 @@ jobs:
         os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v1
-
-      - name: Install Node.js, NPM and Yarn
-        uses: actions/setup-node@v1
+      - id: checkout-git-repository
+        name: Checkout Git repository
+        uses: actions/checkout@v5
+      - id: install-nodejs
+        name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 12
-
-      - name: Install dependencies
+          node-version-file: .nvmrc
+          cache: npm
+      - id: install-dependencies
+        name: Install dependencies
         run: npm install
-
-      - name: Test
-        run: npm test
-
-      - name: Build/release Electron app
-        uses: samuelmeuli/action-electron-builder@v1
+      - id: test
+        name: Test
+        run: |
+          npm test
+      - id: build-electron-app
+        name: Build Electron app
+        uses: sudovijay/action-electron-builder@v1.7.4
         with:
-          # GitHub token, automatically provided to the action
-          # (No need to define this secret in the repo settings)
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-          # If the commit is tagged with a version (e.g. "v1.0.0"),
-          # release the app after building
           release: ${{ startsWith(github.ref, 'refs/tags/v') || contains(github.event.head_commit.message, '/release') }}
