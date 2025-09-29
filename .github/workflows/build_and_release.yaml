@@ -16,7 +16,8 @@ jobs:
   release:
     name: Release
     permissions:
-      contents: read
+      # -- Needed to create a release
+      contents: write
     needs:
       - build
     uses: ./.github/workflows/release.yaml
