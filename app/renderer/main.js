@@ -14,7 +14,7 @@ function ensureCustomFiles() {
     mkdirp.sync(configDir());
     const css = configDir('custom.css');
     const js = configDir('custom.js');
-    if (!fs.existsSync(css)) {
+    try {
         const cssHandle = fs.openSync(
             css,
             fs.constants.O_CREAT |
@@ -24,9 +24,10 @@ function ensureCustomFiles() {
         );
         fs.writeFileSync(cssHandle, '\n', 'utf8');
         fs.closeSync(cssHandle);
+    } catch {
+        // -- `custom.css` already exists!
     }
-
-    if (!fs.existsSync(js)) {
+    try {
         const jsHandle = fs.openSync(
             js,
             fs.constants.O_CREAT |
@@ -36,6 +37,8 @@ function ensureCustomFiles() {
         );
         fs.writeFileSync(jsHandle, '\n', 'utf8');
         fs.closeSync(jsHandle);
+    } catch {
+        // -- `custom.js` already exists!
     }
 }
 
