@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+    "id": "windows-dictionary",
+    "version": "0.2",
+    "name": "Windows Custom Dictionary Configuration",
+    "description": "Custom dictionary definition configuration for Windows.",
+    "readonly": true,
+    "dictionaryDefinitions": [
+        {
+            "name": "windows-dictionary",
+            "description": "Windows Dictionary",
+            "type": "S",
+            "useCompounds": false,
+            "noSuggest": true,
+            "path": "../dictionaries/windows.txt"
+        }
+    ],
+    "dictionaries": ["windows-dictionary"]
+}

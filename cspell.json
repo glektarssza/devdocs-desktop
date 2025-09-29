@@ -9,6 +9,7 @@
         "./.cspell/configs/python-dictionary.json",
         "./.cspell/configs/javascript-dictionary.json",
         "./.cspell/configs/linux-dictionary.json",
+        "./.cspell/configs/windows-dictionary.json",
         "./.cspell/configs/project-dictionary.json"
     ],
     "useGitignore": true,

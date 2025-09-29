@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
-    "id": "arch-linux-dictionary",
+    "id": "linux-dictionary",
     "version": "0.2",
     "name": "Linux Custom Dictionary Configuration",
     "description": "Custom dictionary definition configuration for Linux.",
