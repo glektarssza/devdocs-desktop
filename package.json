@@ -1,6 +1,6 @@
 {
     "name": "devdocs-desktop",
-    "version": "0.7.2",
+    "version": "0.8.0",
     "description": "A desktop client for DevDocs.io.",
     "author": {
         "name": "G'lek Tarssza",
@@ -47,6 +47,7 @@
         "base64-js": "^1.5.1",
         "dotenv": "^17.2.2",
         "electron-builder": "^26.0.12",
+        "electron-devtools-installer": "^4.0.0",
         "electron-notarize": "^1.2.2",
         "electron": "^38.2.0",
         "eslint-config-prettier": "^10.1.8",
